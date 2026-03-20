@@ -386,14 +386,15 @@ if calcular:
         # ==========================================================
         # DESCARGA CSV
         # ==========================================================
-        xlsx = tabla_final.to_xlsx(index=False).encode("utf-8")
+        csv = tabla_final.to_csv(index=False).encode("utf-8")
         st.download_button(
-            label="Descargar tabla de cascada en Excel",
-            data=xlsx,
-            file_name="cascada_calor.xlsx",
-            mime="text/xlsx",
+            label="Descargar tabla de cascada en CSV",
+            data=csv,
+            file_name="cascada_calor.csv",
+            mime="text/.csv",
             use_container_width=True
         )
 
     except Exception as e:
         st.error(f"Ocurrió un error: {e}")
+        
